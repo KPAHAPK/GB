@@ -1,0 +1,51 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	function compareAnswers(userAnswer, number) {
+		if (userAnswer == numbers[number]) {
+		alert("Все верно!");
+		trueAnswer ++;
+		document.write("Вы угадали число " + numbers[number] + "<br>");
+	} else {
+		alert("А вот и нет. Правильный ответ " + numbers[number]);
+		document.write("Вы не угадали число " + numbers[number] + "<br>");
+	}
+		// body...
+	}
+
+	function getRandomNumber(max) {
+		return Math.round(Math.random() * max);
+		// body...
+	}
+
+	function generateRandomNumbersArray(length) {
+		var numbers = [];
+		for(var i = 0; i < length; i++){
+			var randomNumber = getRandomNumber(100);
+			numbers.push(randomNumber);
+		}
+		return numbers;
+		// body...
+	}
+
+	var trueAnswer = 0;
+	var lengthArray = +prompt("Введите длинну массива:");
+	var numbers = generateRandomNumbersArray(lengthArray);
+
+	alert("Запомните числа и их порядок: " + numbers);
+
+	var userAnswer =  +prompt("Введите первое число:");
+	compareAnswers(userAnswer, 0);
+	
+	userAnswer = + prompt("А последнее?");
+	compareAnswers(userAnswer, numbers.length - 1);
+
+	var n = getRandomNumber(numbers.length -1);
+	userAnswer = +prompt("А как насчет числа под номером " + (n + 1) + "?");
+	compareAnswers(userAnswer, n);
+
+	document.write("Всего правильно угаданных чисел: "  + trueAnswer);
+
+
+
+</script>

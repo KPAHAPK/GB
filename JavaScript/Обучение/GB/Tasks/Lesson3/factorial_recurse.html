@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+function oneAnother(){
+	var userNumber = prompt("Введи факториал числа");
+	if (userNumber === null)
+		return alert("Завершено");
+	userNumber = parseInt(userNumber);
+	var f = factorial(userNumber);
+	alert(f);
+	oneAnother();
+	
+}
+function factorial(n) {
+	if (n == 0)
+		return 1;
+	else 
+		return factorial(n - 1) * n;
+}
+
+oneAnother();
+//var userNumber = +prompt("Введи факториал числа");
+//var f = factorial(userNumber);
+//alert(f);
+
+
+
+</script>

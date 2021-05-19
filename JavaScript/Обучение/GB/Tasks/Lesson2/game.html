@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	var rdn = +prompt("Впишите диапазон рандома:")
+	var answer = parseInt(Math.random() * rdn);
+	var useranswer = +prompt("Угадай число от 0 до " + rdn);
+	var i = 0;
+
+	if (useranswer > rdn) {
+		do{
+			var useranswer = +prompt("Слишком большое число\n" + "Угадай число от 0 до" + rdn);
+			i ++;
+		}while (useranswer > rdn)
+	} else{
+	do{
+		var useranswer = +prompt("Неугадал! Давай еще раз\n" + "Угадай число от 0 до" + rdn);
+		i ++;
+	}while (useranswer != answer)
+			}
+
+	document.write("Верно! Загаданное число: " + answer + "<br> Ты потратил " + i + " попыток.");
+
+
+
+</script>

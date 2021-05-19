@@ -1,0 +1,55 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	function askForWords(words) {
+		// body...
+		while (words.length != 0){
+		var randomNumber = parseInt(Math.random() * words.length);
+		var userTranslate = prompt("Как переводится слово: " + words[randomNumber][0]);
+		if (userTranslate == words[randomNumber][1]) {
+			alert("Молодец!");
+			words.splice(randomNumber, 1);
+		} else {
+			alert("Правильный ответ: " + words[randomNumber][1]);
+		}
+	}
+
+	}
+
+//	var english = ["food", "bike", "apple", "do", "mean"];
+//	var russian = ["еда", "велосипед", "яблоко", "делать", "значить"];
+	var easyWords = [
+		["food", "еда"],
+		["bike", "велосипед"],
+		["apple", "яблоко"],
+		["do", "делать"],
+		["mean", "иметь в виду"],
+	];
+
+	askForWords(easyWords);
+
+	alert("Поздравляю вы выучили все простые слова!");
+
+	var hardWords = [
+		["chainsaw", "бензопила"],
+		["squirrel", "белка"],
+		["castle", "замок"],
+		["sewerage", "канализация"],
+		["bottom", "дно"]
+	];
+
+	askForWords(hardWords);
+
+	alert("Поздравляю вы выучили все сложные слова!");
+
+
+
+
+
+
+	alert(words[0]); //food еда
+	alert(words[0][0]) // food
+	alert(words[0][1]) // еда
+	alert(words[0][3]) // undefined
+
+</script>

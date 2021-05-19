@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+<script>
+
+	var dollar = 73.52;
+	var euro = 88.81;
+	alert ("Курс валют:" + "\n" + "1 € = " + dollar + " ₽;\n" + "1 $ = " + euro + " ₽.");
+
+	var rub = prompt("Сколько рублей перевести в валюту?");
+	rub = parseFloat(rub);
+
+	var rubDollar = rub / dollar;
+	var rubEuro = rub / euro;
+	var rub = rub + " ₽ = ";
+	rubDollar = parseFloat(rubDollar).toFixed(2);
+	rubEuro = parseFloat(rubEuro).toFixed(2);
+	alert( rub + rubEuro + " €;\n" + rub + rubDollar + " $.");
+
+</script>

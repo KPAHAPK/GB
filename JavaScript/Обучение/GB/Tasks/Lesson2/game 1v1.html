@@ -1,0 +1,43 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	//Сделать игру с двумя игроками и бесконечным числом попыток. Сделайте возможность выйти из игры по желанию одного из игроков.
+	var user1 = prompt("Имя первого игрока:");
+	var user2 = prompt("Имя второго игрока:");
+	var rdn = +prompt("Введите максимальное случайное число:");
+	var answer = parseInt(Math.random() * rdn);
+	var try1 = 0;//попытки первого
+	var try2 = 0;//попытки второго
+
+	for(i = 0; ; i ++){
+		try1 ++;
+		user1answer = prompt("Первый игрок угадывает число от 0 до " + rdn + "\nЧто бы сдаться нажми 'Отмена'.");
+		if (user1answer === null){
+			document.write(user1 + " сдался <br>Второй игрок победил. Поздравляю " + user2 + "!<br>Загаданное число неотгадано.");
+			break;
+		} else if (user1answer > answer) {
+			alert("Слишком большое число.");
+		} else if (user1answer < answer) {
+			alert("Слишком маленькое число.");
+		} else if (user1answer == answer){
+			document.write("Первый игрок победил. Поздравляю " + user1 + "!<br>Загаданное число: " + answer + "<br> Потрачено " + try1 + " попыток.");
+			break;
+		}
+		
+		try2 ++
+		user2answer = prompt("Второй игрок угадывает число от 0 до " + rdn + "\nЧто бы сдаться нажми 'Отмена'.");
+		if (user2answer === null){
+			document.write(user2 + " сдался <br>Первый игрок победил. Поздравляю " + user1 + "!<br>Загаданное число неотгадано.");
+			break;
+		}if (user2answer > answer) {
+			alert("Слишком большое число");
+		} else if (user2answer < answer) {
+			alert("Слишком маленькое число.");
+		}else if (user2answer == answer){
+			document.write("Второй игрок победил. Поздравляю " + user2 + "!<br>Загаданное число: " + answer + "<br> Потрачено " + try2 + " попыток.");
+			break;
+		}
+	} 
+		
+
+</script>

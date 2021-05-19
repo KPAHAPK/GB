@@ -1,0 +1,57 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	/*b. Написать функцию, которая принимает массив чисел. Результатом работы функции является сумма чисел этого массива.
+	c. Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает максимальное число.
+	d. Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает минимальное число.
+	f. Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает только четные числа из этого массива. Чтобы определить четность числа, воспользуйтесь оператором для подсчета остатка от деления: x % 2. Если остаток от деления числа на 2 равен 0, число будет четное.*/
+
+
+	function getRandomNumber(max) {
+		return Math.round(Math.random() * max);
+	}
+
+	function generateRandomNumbersArray(length) {
+		var numbers = [];
+		for(var i = 0; i < length; i++){
+			var randomNumber = getRandomNumber(100);
+			numbers.push(randomNumber);
+		}
+		alert(numbers);
+		return numbers;
+	}
+
+	function doSum(n) {
+		if (n == 0){
+			return 0;
+		}else
+			return doSum(n - 1) + numbers[n-1];
+	}
+
+	function getMaxOfArray(n) {
+		return Math.max.apply(null, n);
+	}
+
+	function getMinOfArray(n) {
+		return Math.min.apply(null, n);
+	}
+
+	function getEvenNumbersOfArray(n) {
+		var eNumArray = [];
+		for (i = 0; i < n.length; i++){
+				if ((n[i] % 2) == 0){
+				eNumArray.push(n[i]);
+			}
+		}
+		return eNumArray;
+	}
+		
+	var lengthArray = +prompt("Произведу анализ массива случайных чисел(от 0 до 100). Введите длинну массива:");
+	var numbers = generateRandomNumbersArray(lengthArray);
+	var sum = parseInt(doSum(numbers.length));
+	var max = parseInt(getMaxOfArray(numbers));
+	var min = parseInt(getMinOfArray(numbers));
+	var eNum = getEvenNumbersOfArray(numbers);
+	alert("Сумма массива: " + sum + ";\nМаксимальное значение массива: " + max + ";\nМинимальное значение массива: " + min + ";\nЧетные числа массива: " + eNum + ".");
+
+</script>

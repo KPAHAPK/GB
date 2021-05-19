@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	function getRandomNumber(max) {
+		return Math.round(Math.random() * max);
+		// body...
+	}
+	function max(a, b) {
+		if (a >= b) {
+			return a;
+		} else {
+			return b;
+		}
+	}
+	function factorial(n) {
+		var result = 1;
+		for (var i = 1; i <= n; i++){
+			result = result * i;
+		}
+		alert(result);
+		return result;
+	}
+	
+	var fact = prompt("Введи");
+	var f = factorial(fact);
+	var a = max(34, 68);
+	var c = max(a, 98) + 4;
+	var n = getRandomNumber(100);
+	var m = getRandomNumber(4);
+
+
+</script>
